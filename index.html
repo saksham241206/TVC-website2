@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Summit 2025</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* ===== GRID BACKGROUND ===== */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 80px);
+      grid-template-rows: repeat(auto-fill, 80px);
+      pointer-events: none;
+      opacity: 0.55;
+      z-index: 0;
+    }
+
+    .grid-tile {
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    /* ===== SPEAKER CARD ===== */
+    .speaker-card {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+
+    .speaker-overlay {
+      transition: opacity 0.35s ease;
+    }
+
+    .speaker-card:hover .speaker-overlay {
+      opacity: 1;
+    }
+
+    /* ===== SOCIAL ICONS ===== */
+    .social-icons {
+      display: flex;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .social-icons a {
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.08);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      background: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-slate-900/90 to-slate-900/40 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
+    <div class="font-bold text-lg">🚀 TVC</div>
+    <div class="hidden md:flex gap-8 text-slate-300">
+      <a>Home</a><a>Events</a><a>About Us</a><a>Sponsors</a><a>Speakers</a><a>Contact us</a>
+    </div>
+    <button class="bg-cyan-600 hover:bg-cyan-500 px-5 py-2 rounded-lg font-medium">
+      Register
+    </button>
+  </div>
+</nav>
+
+<div class="h-24"></div>
+
+<section id="grid-section" class="relative py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-black">
+  <div id="grid" class="grid-bg"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-5xl font-bold text-blue-300">Our Speakers</h2>
+      <p class="mt-6 text-lg text-slate-400">
+        Meet the visionaries and leaders who shaped E-Summit 2025.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker One</h3>
+          <p class="text-sm text-slate-300">Founder, Startup X</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Two</h3>
+          <p class="text-sm text-slate-300">CEO, Techflow</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Three</h3>
+          <p class="text-sm text-slate-300">CTO, Innovate</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Four</h3>
+          <p class="text-sm text-slate-300">Director, Future Labs</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Five</h3>
+          <p class="text-sm text-slate-300">VP, Cloud Systems</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Six</h3>
+          <p class="text-sm text-slate-300">Lead, AI Research</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Seven</h3>
+          <p class="text-sm text-slate-300">CFO, MoneyTree</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card relative rounded-3xl overflow-hidden bg-slate-900/70 border border-slate-700 w-full max-w-[300px] mx-auto">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" class="w-full h-80 object-cover">
+        <div class="speaker-overlay absolute inset-0 bg-black/80 opacity-0 flex flex-col justify-end p-6">
+          <h3 class="text-xl font-semibold">Speaker Eight</h3>
+          <p class="text-sm text-slate-300">Investor, VC Fund</p>
+          <div class="social-icons">
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-pink-400" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5.5A4.5 4.5 0 1016.5 12 4.5 4.5 0 0012 7.5z"/></svg></a>
+            <a href="#" target="_blank"><svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3zm7 0h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.63 4.75 6.06v6.34h-4v-5.62c0-1.34 0-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.72h-4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black border-t border-slate-800 text-slate-400">
+  <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-16">
+    <div>
+      <h3 class="text-white text-xl font-semibold mb-4">TVC</h3>
+      <p class="text-sm">Ideate. Ascend. Lead.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-4">Contact Us</h4>
+      <p class="text-sm">Thapar Institute of Engineering & Technology<br>Patiala, Punjab</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Home</li><li>Events</li><li>Speakers</li><li>Sponsors</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800 py-6 text-center text-xs">
+    © 2026 TVC · E-Summit. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  const grid = document.getElementById("grid");
+  const section = document.getElementById("grid-section");
+
+  const cols = Math.ceil(window.innerWidth / 80);
+  const rows = Math.ceil(section.offsetHeight / 80);
+  const tiles = [];
+
+  for (let i = 0; i < cols * rows; i++) {
+    const tile = document.createElement("div");
+    tile.className = "grid-tile";
+    grid.appendChild(tile);
+    tiles.push(tile);
+  }
+
+  section.addEventListener("mousemove", (e) => {
+    tiles.forEach(tile => {
+      const rect = tile.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top + rect.height / 2);
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const intensity = Math.max(0, 1 - dist / 180);
+
+      tile.style.backgroundColor = `rgba(255,214,0,${intensity * 0.08})`;
+      tile.style.boxShadow = intensity > 0
+        ? `0 0 ${intensity * 18}px rgba(255,214,0,${intensity * 0.6})`
+        : "none";
+    });
+  });
+</script>
+
+</body>
+</html>
